@@ -1,6 +1,8 @@
-export default function SubTitle({ label }) {
+export default function SubTitle({ label, className }) {
         return (
-                <h3>
+                <h3
+                        className={className}
+                >
                       {label}  
                 </h3>
         )
