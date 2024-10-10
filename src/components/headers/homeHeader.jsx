@@ -3,7 +3,7 @@ import { Paragraph, Topic } from "../text";
 
 export default function HomeHeader() {
         return (
-                <div className="flex justify-between gap-4 bg-sky-300 py-10 px-5 w-full min-h-20">
+                <div className="flex flex-wrap gap-10 justify-between md:gap-4 bg-sky-300 py-10 px-5 w-full min-h-20">
                         <div>
                                 <Topic 
                                         className={`text-sky-950`}
