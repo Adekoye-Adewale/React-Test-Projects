@@ -3,6 +3,19 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
+const logo = {
+        src: '/images/logo.svg',
+        alt: 'Logo',
+        title: 'Logo',
+        width: 169,
+        height: 40,
+}
+
+const homeLink = {
+        href: `/landing-page`,
+        title: `Home page`,
+}
+
 const menuLinks = [
         {
                 label: `About`,
@@ -36,7 +49,7 @@ const DesktopNavBar = () => {
                 <div
                         className='hidden md:flex gap-5 justify-between items-center py-2 px-5 bg-slate-50 shadow'
                 >
-                        <Logo />
+                        <Logo/>
                         <nav>
                                 <ul
                                         className='flex justify-between gap-5'
@@ -44,7 +57,7 @@ const DesktopNavBar = () => {
                                         {menuLinks.map((items, key) => (
                                                 <li
                                                         key={key}
-                                                        className='text-lg'
+                                                        className='text-lg font-medium'
                                                 >
                                                         <MenuLink
                                                                 label={items.label}
@@ -82,17 +95,17 @@ const MobileNavBar = () => {
 const MobileMenu = ({ active }) => {
         return (
                 <div
-                        className={`fixed top-0 right-0 h-dvh flex flex-col md:hidden gap-5 py-2 px-5 bg-slate-50 shadow ${active ? 'w-[90vw] translate-x-0' : 'w-0 translate-x-20'} transition-all duration-300 z-[9]`}
+                        className={`fixed top-0 right-0 h-dvh flex flex-col items-start md:hidden gap-5 p-5 bg-slate-50 shadow ${active ? 'w-[90vw] translate-x-0' : 'w-0 translate-x-20'} transition-all duration-[400ms] z-[9]`}
                 >
                         <Logo />
                         <nav>
                                 <ul
-                                        className='grid gap-5'
+                                        className='grid gap-5 min-h-[50vh] content-around'
                                 >
                                         {menuLinks.map((items, key) => (
                                                 <li
                                                         key={key}
-                                                        className='text-lg'
+                                                        className={`text-3xl font-bold ${active ? 'opacity-100 translate-x-5' : 'opacity-0 translate-x-20'} duration-[250ms] transition-all`}
                                                 >
                                                         <MenuLink
                                                                 label={items.label}
@@ -102,17 +115,23 @@ const MobileMenu = ({ active }) => {
                                         ))}
                                 </ul>
                         </nav>
-                        <CtaBtn />
+                        <CtaBtn 
+                                classname={`mt-auto ${active ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'} duration-[250ms] transition-all`}
+                        />
                 </div>
         )
 }
 
-const Logo = ({ logo }) => {
+const Logo = () => {
         return (
-                <Image 
-                        {...logo}
-                        className='size-full max-w-14'
-                />
+                <Link 
+                        {...homeLink}
+                >
+                        <Image 
+                                {...logo}
+                                className='size-full max-w-14 max-h-[40px]'
+                        />
+                </Link>
         )
 }
 
@@ -142,6 +161,7 @@ const MenuIcon = ({ active, setActive }) => {
                                                 width="1em" 
                                                 height="1em" 
                                                 viewBox="0 0 24 24"
+                                                className='w-7 h-7'
                                         >
                                                 <path 
                                                         fill="#020617" 
@@ -153,6 +173,7 @@ const MenuIcon = ({ active, setActive }) => {
                                                 width="1em"
                                                 height="1em"
                                                 viewBox="0 0 512 512"
+                                                className='w-7 h-7'
                                         >
                                                 <path
                                                         fill="none"
@@ -169,12 +190,12 @@ const MenuIcon = ({ active, setActive }) => {
         )
 }
 
-const CtaBtn = () => {
+const CtaBtn = ({ classname }) => {
         return (
                 <Link 
                         href='/' 
                         title='Click button to hire me'
-                        className='text-lg py-3 px-10 bg-slate-950 text-sky-100 hover:bg-sky-950 transition-all duration-300'
+                        className={`text-lg py-3 px-10 bg-slate-950 text-sky-100 hover:bg-sky-950 transition-all duration-300 ${classname}`}
                 >
                         Hire me
                 </Link>
