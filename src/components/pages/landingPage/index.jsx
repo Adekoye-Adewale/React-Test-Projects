@@ -1,7 +1,8 @@
 import React from 'react'
 import NavBar from './navBar'
 import HeroSection from './heroSection'
-import AboutSection from './aboutSection'
+import CaseStudySection from './caseStudySection'
+import TestimonialsSection from './testimonialsSection'
 
 export default function LandingPageComponent() {
         return (
@@ -9,7 +10,8 @@ export default function LandingPageComponent() {
                         <NavBar/>
                         <main>
                                 <HeroSection/>
-                                <AboutSection/>
+                                <CaseStudySection/>
+                                <TestimonialsSection/>
                         </main>
                 </div>
         )
