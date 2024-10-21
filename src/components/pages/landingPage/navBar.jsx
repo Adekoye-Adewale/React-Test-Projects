@@ -47,27 +47,29 @@ export default function NavBar() {
 const DesktopNavBar = () => {
         return (
                 <div
-                        className='hidden md:flex gap-5 justify-between items-center py-2 px-5 bg-slate-50 shadow'
+                        className='sticky top-0 left-0 hidden md:flex gap-5 justify-between items-center py-2 px-5 backdrop-blur bg-slate-50/80 shadow'
                 >
-                        <Logo/>
-                        <nav>
-                                <ul
-                                        className='flex justify-between gap-5'
-                                >
-                                        {menuLinks.map((items, key) => (
-                                                <li
-                                                        key={key}
-                                                        className='text-lg font-medium'
-                                                >
-                                                        <MenuLink
-                                                                label={items.label}
-                                                                slug={items.slug}
-                                                        />
-                                                </li>
-                                        ))}
-                                </ul>
-                        </nav>
-                        <CtaBtn />
+                        <div className='flex gap-5 w-full justify-between items-center'>
+                                <Logo/>
+                                <nav>
+                                        <ul
+                                                className='flex justify-between gap-5'
+                                        >
+                                                {menuLinks.map((items, key) => (
+                                                        <li
+                                                                key={key}
+                                                                className='text-lg font-medium'
+                                                        >
+                                                                <MenuLink
+                                                                        label={items.label}
+                                                                        slug={items.slug}
+                                                                />
+                                                        </li>
+                                                ))}
+                                        </ul>
+                                </nav>
+                                <CtaBtn />
+                        </div>
                 </div>
         )
 }
@@ -78,7 +80,7 @@ const MobileNavBar = () => {
 
         return (
                 <div
-                        className='flex md:hidden gap-5 justify-between items-center py-2 px-5 bg-slate-50 shadow'
+                        className='sticky top-0 left-0 flex md:hidden gap-5 justify-between items-center py-2 px-5 bg-slate-50/80 shadow overflow-hidden'
                 >
                         <Logo />
                         <MenuIcon
@@ -95,7 +97,7 @@ const MobileNavBar = () => {
 const MobileMenu = ({ active }) => {
         return (
                 <div
-                        className={`fixed top-0 right-0 h-dvh flex flex-col items-start md:hidden gap-5 p-5 bg-slate-50 shadow ${active ? 'w-[90vw] translate-x-0' : 'w-0 translate-x-20'} transition-all duration-[400ms] z-[9]`}
+                        className={`fixed top-0 right-0 h-dvh flex flex-col items-start md:hidden gap-5 p-5 bg-slate-50/80 backdrop-blur shadow ${active ? 'w-[90vw] translate-x-0' : 'w-0 translate-x-20'} transition-all duration-[400ms] z-[9]`}
                 >
                         <Logo />
                         <nav>
