@@ -46,8 +46,8 @@ export default function NavBar() {
 
 const DesktopNavBar = () => {
         return (
-                <div
-                        className='sticky top-0 left-0 hidden md:flex gap-5 justify-between items-center py-2 px-5 backdrop-blur bg-slate-50/80 shadow'
+                <header
+                        className='sticky top-0 left-0 hidden md:flex gap-5 justify-between items-center py-2 px-5 backdrop-blur bg-slate-50/80 shadow z-10'
                 >
                         <div className='flex gap-5 w-full justify-between items-center'>
                                 <Logo/>
@@ -70,7 +70,7 @@ const DesktopNavBar = () => {
                                 </nav>
                                 <CtaBtn />
                         </div>
-                </div>
+                </header>
         )
 }
 
@@ -79,7 +79,7 @@ const MobileNavBar = () => {
         const [ active, setActive ] = useState(false)
 
         return (
-                <div
+                <header
                         className='sticky top-0 left-0 flex md:hidden gap-5 justify-between items-center py-2 px-5 bg-slate-50/80 shadow overflow-hidden z-50'
                 >
                         <Logo />
@@ -90,7 +90,7 @@ const MobileNavBar = () => {
                         <MobileMenu
                                 active={active}
                         />
-                </div>
+                </header>
         )
 }
 
