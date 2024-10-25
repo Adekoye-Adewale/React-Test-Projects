@@ -64,7 +64,7 @@ const wwIcons = [
 export default function HeroSection() {
         return (
                 <section 
-                        className='bg-sky-700 min-h-[50vh] py-20 px-5 overflow-hidden'
+                        className='bg-sky-50 min-h-[50vh] py-20 px-5 overflow-hidden'
                 >
                         <div className='max-w-7xl mx-auto'>
                                 <div
@@ -82,7 +82,7 @@ export default function HeroSection() {
 const Content = () => {
         return (
                 <div className='grid gap-2 md:gap-5 text-center md:text-left'>
-                        <h1 className='text-4xl md:text-7xl font-bold text-white'>
+                        <h1 className='text-4xl md:text-7xl font-bold'>
                                 Hello! I am Akanda
                         </h1>
                         <p className='text-lg md:text-2xl text-pretty'>
@@ -112,7 +112,7 @@ const WorkedWith = () => {
                                         <Image 
                                                 {...icon}
                                                 key={key}
-                                                className='max-w-32 size-full aspect-[350/94] py-2 px-5 border-solid border border-slate-900 rounded-md cursor-pointer'
+                                                className='max-w-32 size-full aspect-[350/94] py-2 px-5 border-solid border border-slate-900 bg-sky-200 rounded-md cursor-pointer'
                                         />
                                 ))}
                         </div>
