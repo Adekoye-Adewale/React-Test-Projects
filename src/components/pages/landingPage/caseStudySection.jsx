@@ -45,7 +45,7 @@ const caseCopy = [
 
 export default function CaseStudySection() {
         return (
-                <section className='bg-sky-300 min-h-[50vh] py-20 px-5 overflow-hidden'>
+                <section className='bg-sky-200 min-h-[50vh] py-20 px-5 overflow-hidden z-[1]'>
                         <div className='max-w-7xl mx-auto'>
                                 <LabelContent/>
                                 <Case/>
@@ -64,7 +64,7 @@ const LabelContent = () => {
                         </div>
                         <div>
                                 <p className='text-lg md:text-2xl'>
-                                        Solving user & business problems since last 15+ years. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                        Solving user & business problems since last 15+ years.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                                 </p>
                         </div>
                 </div>
