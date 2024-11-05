@@ -45,7 +45,7 @@ const caseCopy = [
 
 export default function CaseStudySection() {
         return (
-                <section className='bg-sky-200 min-h-[50vh] py-20 px-5 overflow-hidden z-[1]'>
+                <section className='bg-sky-200 dark:bg-slate-800 min-h-[50vh] py-20 px-5 overflow-hidden z-[1]'>
                         <div className='max-w-7xl mx-auto'>
                                 <LabelContent/>
                                 <Case/>
@@ -92,7 +92,7 @@ const CaseCard = ({ label, title, description, img }) => {
         return (
                 <div className='grid grid-cols-1 items-center p-5 border-solid border-2 border-slate-700 md:grid-cols-2 gap-5'>
                         <div className='grid gap-3'>
-                                <span className='text-xs font-medium px-3 py-1 mr-auto rounded-lg bg-sky-200'>
+                                <span className='text-xs font-medium px-3 py-1 mr-auto rounded-lg bg-sky-200 dark:bg-slate-900'>
                                         {label}
                                 </span>
                                 <h3 className='text-3xl font-bold'>
