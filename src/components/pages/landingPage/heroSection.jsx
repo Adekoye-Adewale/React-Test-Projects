@@ -1,5 +1,8 @@
-import Image from 'next/image'
-import React from 'react'
+import React from 'react';
+import Image from 'next/image';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
 
 const img = {
         src: '/images/hero-img.webp',
@@ -59,12 +62,33 @@ const wwIcons = [
                 width: 350,
                 height: 94,
         },
+        {
+                src: '/icons/swiggy-logo_black.svg',
+                alt: `Swiggy logo`,
+                title: `Swiggy logo`,
+                width: 350,
+                height: 94,
+        },
+        {
+                src: '/icons/canva-logo_black.svg',
+                alt: `Canva logo`,
+                title: `Canva logo`,
+                width: 350,
+                height: 94,
+        },
+        {
+                src: '/icons/razorpay-logo_black.svg',
+                alt: `Razorpay logo`,
+                title: `Razorpay logo`,
+                width: 350,
+                height: 94,
+        },
 ]
 
 export default function HeroSection() {
         return (
                 <section 
-                        className='bg-sky-50 min-h-[50vh] py-20 px-5 overflow-hidden'
+                        className='bg-sky-50 dark:bg-slate-950 text-slate-950 dark:text-sky-50 min-h-[50vh] py-20 px-5 overflow-hidden'
                 >
                         <div className='max-w-7xl mx-auto'>
                                 <div
@@ -103,18 +127,34 @@ const HeroImg = () => {
 
 const WorkedWith = () => {
         return (
-                <div className='grid gap-2 mt-5'>
+                <div className='mt-5'>
                         <h3 className='text-2xl font-semibold'>
                                 Worked with
                         </h3>
-                        <div className='flex gap-5'>
-                                {wwIcons.map((icon, key) => (
-                                        <Image 
-                                                {...icon}
-                                                key={key}
-                                                className='max-w-32 size-full aspect-[350/94] py-2 px-5 border-solid border border-slate-900 bg-sky-200 rounded-md cursor-pointer'
-                                        />
-                                ))}
+                        <div className='mt-2 w-full'>
+                                <Swiper
+                                        slidesPerView={8}
+                                        spaceBetween={20}
+                                        loop={true}
+                                        autoplay={{
+                                                delay: 2500,
+                                                // disableOnInteraction: false,
+                                        }}
+                                        modules={[Autoplay, Navigation, Pagination ]}
+                                >
+                                        {wwIcons.map((icon, index) => (
+                                                <SwiperSlide
+                                                        key={index}
+                                                >
+                                                        <div>
+                                                                <Image 
+                                                                        {...icon}
+                                                                        className='max-w-32 size-full aspect-[350/94] py-2 px-5 border-solid border border-slate-900 bg-sky-200 rounded-md cursor-pointer'
+                                                                />
+                                                        </div>
+                                                </SwiperSlide>
+                                        ))}
+                                </Swiper>
                         </div>
                 </div>
         )
