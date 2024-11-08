@@ -135,12 +135,33 @@ const WorkedWith = () => {
                                 <Swiper
                                         slidesPerView={8}
                                         spaceBetween={20}
+                                        speed={5000}
                                         loop={true}
                                         autoplay={{
-                                                delay: 2500,
-                                                // disableOnInteraction: false,
+                                                delay: 0,
+                                                disableOnInteraction: false,
+                                                pauseOnMouseEnter: false,
                                         }}
                                         modules={[Autoplay, Navigation, Pagination ]}
+                                        breakpoints={{
+                                                10: {
+                                                        slidesPerView: 3,
+                                                        spaceBetween: 10,
+                                                },
+                                                520: {
+                                                        slidesPerView: 4,
+                                                        spaceBetween: 20,
+                                                },
+                                                800: {
+                                                        slidesPerView: 6,
+                                                        spaceBetween: 20,
+                                                },
+                                                1200: {
+                                                        slidesPerView: 8,
+                                                        spaceBetween: 20,
+                                                },
+                                        }}
+                                        className='swiper-transition'
                                 >
                                         {wwIcons.map((icon, index) => (
                                                 <SwiperSlide
