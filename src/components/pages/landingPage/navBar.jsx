@@ -1,7 +1,7 @@
-'use client'
 import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import ToggleTheme from './ToggleTheme'
 
 const logo = {
         src: '/images/logo.svg',
@@ -47,7 +47,7 @@ export default function NavBar() {
 const DesktopNavBar = () => {
         return (
                 <header
-                        className='sticky top-0 left-0 hidden md:flex gap-5 justify-between items-center py-2 px-5 backdrop-blur bg-slate-50/80 shadow z-10'
+                        className='sticky top-0 left-0 hidden md:flex gap-5 justify-between items-center py-4 px-5 backdrop-blur bg-sky-50/80 text-slate-950 dark:bg-slate-950/90 dark:text-slate-50 shadow z-10'
                 >
                         <div className='flex gap-5 w-full justify-between items-center'>
                                 <Logo/>
@@ -58,7 +58,7 @@ const DesktopNavBar = () => {
                                                 {menuLinks.map((items, key) => (
                                                         <li
                                                                 key={key}
-                                                                className='text-lg font-medium'
+                                                                className='text-2xl font-medium'
                                                         >
                                                                 <MenuLink
                                                                         label={items.label}
@@ -68,7 +68,10 @@ const DesktopNavBar = () => {
                                                 ))}
                                         </ul>
                                 </nav>
-                                <CtaBtn />
+                                <div className='flex gap-2 items-center justify-between'>
+                                        <CtaBtn />
+                                        <ToggleTheme/>
+                                </div>
                         </div>
                 </header>
         )
@@ -197,7 +200,7 @@ const CtaBtn = ({ classname }) => {
                 <Link 
                         href='/' 
                         title='Click button to hire me'
-                        className={`text-lg py-3 px-10 bg-slate-950 text-sky-100 hover:bg-sky-950 transition-all duration-300 ${classname}`}
+                        className={`text-lg py-3 px-10 bg-slate-950 dark:bg-sky-50 text-sky-100 dark:text-slate-900 hover:bg-sky-950 dark:hover:bg-sky-200 transition-all duration-300 ${classname}`}
                 >
                         Hire me
                 </Link>
