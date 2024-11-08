@@ -7,15 +7,19 @@ const ThemeContext = createContext({
 
 function ThemeProvider({ children }) {
         const [theme, setTheme] = useState(() => {
-                const storedTheme = localStorage.getItem('theme');
-                return storedTheme
-                        ? storedTheme : 'light';
+                if (typeof window !== 'undefined') {
+                        const storedTheme = localStorage.getItem('theme');
+                        return storedTheme ? storedTheme : 'light';
+                }
+                return 'light';
         });
 
         const toggleTheme = () => {
                 const newTheme = theme === 'light' ? 'dark' : 'light';
                 setTheme(newTheme);
-                localStorage.setItem('theme', newTheme);
+                if (typeof window !== 'undefined') {
+                        localStorage.setItem('theme', newTheme);
+                }
         };
 
         useEffect(() => {
@@ -23,7 +27,7 @@ function ThemeProvider({ children }) {
         }, [theme]);
 
         return (
-                <ThemeContext.Provider 
+                <ThemeContext.Provider
                         value={{
                                 theme,
                                 toggleTheme
