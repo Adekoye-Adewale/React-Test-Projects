@@ -54,7 +54,7 @@ const list = [
 
 export default function SkillsSection() {
         return (
-                <section className='bg-sky-200 py-20 px-5 overflow-hidden z-[1]'>
+                <section className='bg-sky-200 dark:bg-slate-950 py-20 px-5 overflow-hidden z-[1]'>
                         <div className='max-w-7xl mx-auto'>
                                 <LabelContent/>
                                 <SkillList/>
