@@ -100,7 +100,7 @@ const MobileNavBar = () => {
 const MobileMenu = ({ active }) => {
         return (
                 <div
-                        className={`fixed top-0 right-0 h-dvh flex flex-col items-start md:hidden gap-5 p-5 bg-slate-50/80 backdrop-blur shadow ${active ? 'w-[90vw] translate-x-0' : 'w-0 translate-x-20'} transition-all duration-[400ms] z-[9]`}
+                        className={`fixed top-0 right-0 h-dvh flex flex-col items-start md:hidden gap-5 p-5 bg-sky-50/80 dark:bg-slate-950/95 backdrop-blur shadow ${active ? 'w-[90vw] translate-x-0' : 'w-0 translate-x-20'} transition-all duration-[400ms] z-[9]`}
                 >
                         <Logo />
                         <nav>
@@ -123,6 +123,9 @@ const MobileMenu = ({ active }) => {
                         <CtaBtn 
                                 classname={`mt-auto ${active ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'} duration-[250ms] transition-all`}
                         />
+                        <div>
+                                <ToggleTheme/>
+                        </div>
                 </div>
         )
 }
