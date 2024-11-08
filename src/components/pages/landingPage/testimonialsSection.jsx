@@ -54,7 +54,7 @@ const testimony = [
 
 export default function TestimonialsSection() {
         return (
-                <section className='bg-sky-100 min-h-[50vh] py-20 px-5 overflow-hidden z-[1]'>
+                <section className='bg-sky-100 dark:bg-sky-950 min-h-[50vh] py-20 px-5 overflow-hidden z-[1]'>
                         <div className='max-w-7xl mx-auto'>
                                 <LabelContent/>
                                 <Cards/>
@@ -131,7 +131,7 @@ const QouteIcon = () => {
                         xmlns="https://www.w3.org/2000/svg"
                 >
                         <g 
-                                clip-path="url(#clip0_719_2)"
+                                clipPath="url(#clip0_719_2)"
                         >
                                 <path 
                                         d="M7.4 -1.90735e-06L5.7 10.6H8.1V20.9H1.4V10.6L3.9 -1.90735e-06H7.4ZM19.5 -1.90735e-06L17.8 10.6H20.2V20.9H13.5V10.6L16 -1.90735e-06H19.5Z" 
@@ -144,7 +144,7 @@ const QouteIcon = () => {
                                 >
                                         <rect 
                                                 width="21"
-                                                 height="21" 
+                                                height="21" 
                                                 fill="#000000" 
                                         />
                                 </clipPath>
