@@ -54,7 +54,10 @@ const testimony = [
 
 export default function TestimonialsSection() {
         return (
-                <section className='bg-sky-100 dark:bg-sky-950 min-h-[50vh] py-20 px-5 overflow-hidden z-[1]'>
+                <section 
+                        className='bg-sky-100 dark:bg-sky-950 min-h-[50vh] py-20 px-5 overflow-hidden z-[1]' 
+                        id='testimonials'
+                >
                         <div className='max-w-7xl mx-auto'>
                                 <LabelContent/>
                                 <Cards/>
