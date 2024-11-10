@@ -2,7 +2,10 @@ import React from 'react'
 
 export default function GetInTouch() {
         return (
-                <section className='bg-black min-h-[50vh] py-20 px-5 overflow-hidden z-[1] text-white'>
+                <section 
+                        className='bg-black min-h-[50vh] py-20 px-5 overflow-hidden z-[1] text-white'
+                        id='contact'
+                >
                         <div className='max-w-7xl mx-auto'>
                                 <LabelContent />
                                 <Form/>
