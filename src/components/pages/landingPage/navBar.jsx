@@ -11,6 +11,14 @@ const logo = {
         height: 40,
 }
 
+const logoLight = {
+        src: '/images/logo-light.svg',
+        alt: 'Logo',
+        title: 'Logo',
+        width: 169,
+        height: 40,
+}
+
 const homeLink = {
         href: `/landing-page`,
         title: `Home page`,
@@ -18,16 +26,16 @@ const homeLink = {
 
 const menuLinks = [
         {
-                label: `About`,
-                slug: `/landing-page/#about`,
+                label: `Case Study`,
+                slug: `/landing-page/#caseStudy`,
+        },
+        {
+                label: `Testimonials`,
+                slug: `/landing-page/#testimonials`,
         },
         {
                 label: `Skills`,
                 slug: `/landing-page/#skills`,
-        },
-        {
-                label: `Portfolio`,
-                slug: `/landing-page/#portfolio`,
         },
         {
                 label: `Contact`,
@@ -83,7 +91,7 @@ const MobileNavBar = () => {
 
         return (
                 <header
-                        className='sticky top-0 left-0 flex md:hidden gap-5 justify-between items-center py-2 px-5 bg-slate-50/80 shadow overflow-hidden z-50'
+                        className='sticky top-0 left-0 flex md:hidden gap-5 justify-between items-center py-2 px-5 bg-sky-50/80 dark:bg-slate-950/90 shadow overflow-hidden z-50'
                 >
                         <Logo />
                         <MenuIcon
@@ -92,12 +100,18 @@ const MobileNavBar = () => {
                         />
                         <MobileMenu
                                 active={active}
+                                setActive={setActive}
                         />
                 </header>
         )
 }
 
-const MobileMenu = ({ active }) => {
+const MobileMenu = ({ active, setActive }) => {
+
+        const handleMenuClick = () => {
+                setActive(!active)
+        }
+
         return (
                 <div
                         className={`fixed top-0 right-0 h-dvh flex flex-col items-start md:hidden gap-5 p-5 bg-sky-50/80 dark:bg-slate-950/95 backdrop-blur shadow ${active ? 'w-[90vw] translate-x-0' : 'w-0 translate-x-20'} transition-all duration-[400ms] z-[9]`}
@@ -111,6 +125,7 @@ const MobileMenu = ({ active }) => {
                                                 <li
                                                         key={key}
                                                         className={`text-3xl font-bold ${active ? 'opacity-100 translate-x-5' : 'opacity-0 translate-x-20'} duration-[250ms] transition-all`}
+                                                        onClick={handleMenuClick}
                                                 >
                                                         <MenuLink
                                                                 label={items.label}
@@ -137,7 +152,11 @@ const Logo = () => {
                 >
                         <Image 
                                 {...logo}
-                                className='size-full max-w-14 max-h-[40px]'
+                                className='block dark:hidden size-full max-w-14 max-h-[40px]'
+                        />
+                        <Image 
+                                {...logoLight}
+                                className='hidden dark:block size-full max-w-14 max-h-[40px]'
                         />
                 </Link>
         )
@@ -169,10 +188,9 @@ const MenuIcon = ({ active, setActive }) => {
                                                 width="1em" 
                                                 height="1em" 
                                                 viewBox="0 0 24 24"
-                                                className='w-7 h-7'
+                                                className='w-7 h-7 [&_path]:fill-slate-950 dark:[&_path]:fill-sky-50'
                                         >
                                                 <path 
-                                                        fill="#020617" 
                                                         d="M18.3 5.71a.996.996 0 0 0-1.41 0L12 10.59L7.11 5.7A.996.996 0 1 0 5.7 7.11L10.59 12L5.7 16.89a.996.996 0 1 0 1.41 1.41L12 13.41l4.89 4.89a.996.996 0 1 0 1.41-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4"/>
                                         </svg>
                                 ) : (
@@ -181,11 +199,9 @@ const MenuIcon = ({ active, setActive }) => {
                                                 width="1em"
                                                 height="1em"
                                                 viewBox="0 0 512 512"
-                                                className='w-7 h-7'
+                                                className='w-7 h-7 [&_path]:stroke-slate-950 dark:[&_path]:stroke-sky-50'
                                         >
                                                 <path
-                                                        fill="none"
-                                                        stroke="#020617 "
                                                         strokeLinecap="round"
                                                         strokeMiterlimit={10}
                                                         strokeWidth={32}
