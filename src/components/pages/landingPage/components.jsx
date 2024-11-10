@@ -7,7 +7,7 @@ import GetInTouch from './getInTouch'
 
 export default function Components() {
         return (
-                <div className={`text-slate-950 dark:text-sky-50`}>
+                <div className={`text-slate-950 dark:text-sky-50 scroll-smooth`}>
                         <NavBar />
                         <main>
                                 <HeroSection />
