@@ -25,7 +25,7 @@ export const taskList = [
                         width: 1200,
                         height: 800
                 },
-                slug: `/landing-page`,
+                slug: `/todo-list-app`,
         },
         {
                 title: "Weather Forecast App (API Integration)",
